@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{category}-{#####}",
+ "creation": "2022-11-20 20:45:22.409480",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "category",
+  "notes",
+  "date",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Salary\nAward\nIncentive\nOvertime"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Total"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-20 21:01:59.464525",
+ "modified_by": "Administrator",
+ "module": "Income Shouman",
+ "name": "Income Category",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

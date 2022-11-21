@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{#####}",
+ "creation": "2022-11-20 20:35:47.043480",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "personal_tab",
+  "nid",
+  "emp_name",
+  "column_break_4",
+  "dob",
+  "doh",
+  "tab_break_4",
+  "governorate",
+  "province",
+  "column_break_8",
+  "address",
+  "phone",
+  "tab_break_9",
+  "sector",
+  "factory",
+  "column_break_15",
+  "data_12",
+  "income_tab",
+  "total_income",
+  "income_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "personal_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personal"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "doh",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DOH"
+  },
+  {
+   "fieldname": "tab_break_4",
+   "fieldtype": "Tab Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "governorate",
+   "fieldtype": "Data",
+   "label": "Governorate"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Data",
+   "label": "Province"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "tab_break_9",
+   "fieldtype": "Tab Break",
+   "label": "Position"
+  },
+  {
+   "fieldname": "sector",
+   "fieldtype": "Data",
+   "label": "Sector"
+  },
+  {
+   "fieldname": "factory",
+   "fieldtype": "Data",
+   "label": "Factory / MNG"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "data_12",
+   "fieldtype": "Data",
+   "label": "DPT"
+  },
+  {
+   "fieldname": "income_tab",
+   "fieldtype": "Tab Break",
+   "label": "Income"
+  },
+  {
+   "fieldname": "total_income",
+   "fieldtype": "Currency",
+   "label": "Total income",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_details",
+   "fieldtype": "Table",
+   "label": "Income Details",
+   "options": "Income Category"
+  },
+  {
+   "fieldname": "emp_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "nid",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "NID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-21 12:08:49.210414",
+ "modified_by": "Administrator",
+ "module": "Income Shouman",
+ "name": "Employee_Shouman",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
