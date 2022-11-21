@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{#####}",
+ "autoname": "format:{emp_name}-{#####}",
  "creation": "2022-11-20 20:35:47.043480",
  "default_view": "List",
  "doctype": "DocType",
@@ -137,7 +137,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-21 12:08:49.210414",
+ "modified": "2022-11-21 13:08:30.105410",
  "modified_by": "Administrator",
  "module": "Income Shouman",
  "name": "Employee_Shouman",

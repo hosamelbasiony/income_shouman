@@ -29,19 +29,25 @@ def test(emps):
 def upload_income(list):
     documents = json.loads(list)
 
+    not_found = []
+
     for document in documents:
 
-        emp = frappe.get_doc('Employee_Shouman', {'nid': document["nid"]}, "*", as_dict=True)
-        print((emp.emp_name))
-        
-        if emp != None:
-            emp.append('income_details', {
-                'date': document["date"],
-                'category': document["category"],
-                'total': document["total"]
-            })
+        try:
+            emp = frappe.get_doc('Employee_Shouman', {'nid': document["nid"]}, "*", as_dict=True)
+            
+            if emp != None:
+                print((emp.emp_name))
+                emp.append('income_details', {
+                    'date': document["date"],
+                    'category': document["category"],
+                    'total': document["total"]
+                })
 
-            emp.save()
+                emp.save()
+        except:
+            not_found.append(document["nid"])
+            pass
 
-    frappe.db.commit()
-    return {"payload": list}
+    #frappe.db.commit()
+    return {"not_found": not_found}
