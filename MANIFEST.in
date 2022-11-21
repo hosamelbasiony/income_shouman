@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include income_shouman *.css
+recursive-include income_shouman *.csv
+recursive-include income_shouman *.html
+recursive-include income_shouman *.ico
+recursive-include income_shouman *.js
+recursive-include income_shouman *.json
+recursive-include income_shouman *.md
+recursive-include income_shouman *.png
+recursive-include income_shouman *.py
+recursive-include income_shouman *.svg
+recursive-include income_shouman *.txt
+recursive-exclude income_shouman *.pyc
