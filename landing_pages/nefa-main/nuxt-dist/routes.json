@@ -1,0 +1,9 @@
+[
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/frappe/frappe-bench/apps/income_shouman/landing_pages/nefa-main/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_0bddd7b4"
+  }
+]

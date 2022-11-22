@@ -1,0 +1,24 @@
+<!-- about.html -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <h1>{{ _("About Us") }}</h1>
+    <div class="row">
+        <div class="col-sm-6 text-primary">
+            We believe that great companies are driven by excellence,
+            and add value to both its customers and society.
+            You will find our team embibes these values.
+        </div>
+
+        {% if about_us_settings.show_contact_us %}
+        <a href="/contact" class="btn btn-primary">Contact Us</a>
+        {% endif %}
+    </div>
+</div>

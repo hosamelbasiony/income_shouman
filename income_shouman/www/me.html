@@ -1,0 +1,17 @@
+<!-- about.html -->
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="p-4">
+    <h1>{{ _("About Us") }}</h1>
+    <div class="row">
+        <div class="text-gray-600">
+            We believe that great companies are driven by excellence,
+            and add value to both its customers and society.
+            You will find our team embibes these values.
+        </div>
+
+        {% if home_page_settings.show_contact_us %}
+        <a href="/dist" class="btn btn-primary">Contact Me and Only Me</a>
+        <a href="/login" class="btn btn-primary">Login</a>
+        {% endif %}
+    </div>
+</div>

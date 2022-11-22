@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-11-21 20:08:29.192482",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2022-11-21 20:13:06.234535",
+ "modified_by": "Administrator",
+ "module": "Income Shouman",
+ "name": "Employees Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Employee_Shouman",
+ "report_name": "Employees Report",
+ "report_script": "## First, fetch your base data results using normal api calls\r\n## We can also access `filters`, defined by either the table above or the client script below\r\n\r\nfilters = {}\r\nresults = frappe.db.get_all('Employee_Shouman', ['*'], filters=filters)\r\n\r\n# Then, for fun, let's define a new property programmatically\r\nfor result in results:\r\n    result.backwards_name = result.first_name [::-1]\r\n\r\n## Next, we can add a custom message. This will appear near the top\r\nmessage = \"This report has been generated automatically.\"\r\n\r\n## After that, we can generate a report summary to display above the chart and the data\r\n## (For this, we'll split our list up a bit using comprehensions. You can generate this summary data any way you want.)\r\nmale_users = results\r\nfemale_users = results\r\n# male_users = [user for user in results if user.gender == \"Male\"]\r\n# female_users = [user for user in results if user.gender == \"Female\"]\r\n\r\nreport_summary = [\r\n\t{\r\n\t\t\"value\": frappe.format_date(frappe.utils.nowdate()),\r\n\t\t\"label\": \"Report Date\",\r\n\t\t\"datatype\": \"Data\",\r\n\t},\r\n\t{\r\n\t\t\"value\": len(results),\r\n\t\t\"label\": \"Total users\",\r\n\t\t\"datatype\": \"Data\",\r\n\t},\r\n\t{\r\n\t\t\"value\": (100 * len(female_users) / len(results)),\r\n\t\t\"label\": \"Percent female\",\r\n\t\t\"indicator\": \"Red\" if (100 * len(female_users) / len(results)) > 50 else \"Blue\",\r\n\t\t\"datatype\": \"Percent\",\r\n\t}\r\n]\r\n\r\n## Now, we can generate a chart using standard Frappe Charts syntax\r\n## To keep things short, I'm just manually entering data here, but of course usually this would be generated programmatically\r\nchart = {\r\n\t'data': {\r\n\t\t'labels': [\"One\", \"Two\", \"Three\"],\r\n\t\t'datasets': [\r\n            {\r\n                'name': \"Female\", 'type': \"bar\",\r\n                'values': [3, 5, 7]\r\n            },\r\n            {\r\n                'name': \"Male\", 'type': \"bar\",\r\n                'values': [4, 2, 1]\r\n            }\r\n        ]\r\n\t},\r\n\t'type': \"bar\"\r\n}\r\n\r\n## Finally, define your columns. Many of the usual field definition properties are available here for use.\r\n## If you wanted to, you could also specify these columns in the child table above.\r\ncolumns = [\r\n    {\r\n        'fieldname': 'emp_name',\r\n        'label': _('Document Link'),\r\n        'fieldtype': 'Link',\r\n        'options': 'Employee_Shouman',\r\n        'width': 300\r\n    },\r\n    {\r\n        'fieldname': 'emp_name',\r\n        'label': _('First Name'),\r\n        'fieldtype': 'Data',\r\n        'align': 'left',\r\n        'width': 200\r\n    },\r\n    {\r\n        'fieldname': 'emp_name',\r\n        'label': _('Last Name'),\r\n        'fieldtype': 'Data',\r\n        'width': 200,\r\n        'align': 'left'\r\n    },\r\n    {\r\n        # here's our `backwards_name` field, which we defined earlier\r\n        # 'fieldname': 'backwards_name',\r\n        'fieldname': 'emp_name',\r\n        'label': _('Backwards Name'),\r\n        'fieldtype': 'Data',\r\n        'align': 'right',\r\n        'width': 200\r\n    },\r\n]\r\n\r\n## finally, we assemble it all together\r\ndata = columns, results, message, chart, report_summary",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
