@@ -84,7 +84,7 @@ def execute(filters=None):
 		},
 		{
 			"value": len(results),
-			"label": "Total users",
+			"label": "Total employees",
 			"datatype": "Data",
 		},
 		{
@@ -100,15 +100,19 @@ def execute(filters=None):
 	
 	chart = {
 		'data': {
-			'labels': ["One", "Two", "Three"],
+			'labels': ["One", "Two", "Three", "One"],
 			'datasets': [
 				{
-					'name': "Female", 'type': "bar",
-					'values': [3, 5, 7]
+					'name': "High income", 'type': "bar",
+					'values': [3, 5, 7, 3]
 				},
 				{
-					'name': "Male", 'type': "bar",
-					'values': [4, 2, 1]
+					'name': "Fair income", 'type': "bar",
+					'values': [4, 2, 2, 4]
+				},
+				{
+					'name': "Low income", 'type': "bar",
+					'values': [4, 7, 4, 5]
 				}
 			]
 		},

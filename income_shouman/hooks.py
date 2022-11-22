@@ -14,7 +14,7 @@ app_license = "MIT"
 # app_include_css = "/assets/income_shouman/css/income_shouman.css"
 # app_include_js = "/assets/income_shouman/js/income_shouman.js"
 
-# app_include_js = "/assets/income_shouman/js/income_shouman.js"
+app_include_css = "/assets/income_shouman/css/income_shouman.css"
 app_include_js = "/assets/income_shouman/js/xlsx.full.min.js"
 
 # include js, css files in header of web template

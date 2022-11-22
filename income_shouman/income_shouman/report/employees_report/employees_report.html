@@ -7,11 +7,19 @@
     <title>Document</title>
     
     <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
         table { page-break-inside:auto }
         tr    { page-break-inside:avoid; page-break-after:auto }
         thead { display:table-header-group }
         tfoot { display:table-footer-group }
         h2    { white-space: nowrap; overflow: hidden; text-overflow: ellipsis;display:block;height:20mm;width:100%;background:whitesmoke}
+        .arabic {
+            font-family: "Noto Sans Arabic", sans-serif!important;
+            /* font-family: "Cairo", sans-serif; */
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: rgb(88, 88, 88)
+        }
     </style>
 </head>
 <body>
@@ -36,7 +44,7 @@
                             {%= __("to") %}
                             {%= frappe.datetime.str_to_user("2023-01-01") %}
                         </h2> -->
-                        <h2 class="text-center text-end">{%= __("List of Employees") %}</h2>
+                        <h2 class="text-center text-end">{%= __("List") + "From " + filters.date_from + " To " + filters.date_to %}</h2>
                     </th>
                 </tr>
             </thead>
@@ -51,23 +59,31 @@
                 {% for(var i=0, l=data.length; i<l; i++) { %}
                     <tr>
                         <!-- <td></td> -->
-                        <td><i>{%= data[i].income.length || "Empty &nbsp;" %}</i></td>
+                        <td><i>Count ({%= data[i].income.length || "Empty &nbsp;" %})</i></td>
                         <!-- <td><i>{%= JSON.stringify(data[i]) %}</i></td> -->
                         <td><b>{%= frappe.format(data[i].doh, {fieldtype: "Date"}) || "&nbsp;" %}</b></td>
-                        <td><b>{%= frappe.format(data[i].emp_name, {fieldtype: "Data"}) || "&nbsp;" %}</b></td>
+                        <td><b class="arabic">{%= frappe.format(data[i].emp_name, {fieldtype: "Data"}) || "&nbsp;" %}</b></td>
                         <td><b>{%= frappe.format(data[i].total, {fieldtype: "Data"}) || "&nbsp;" %}</b></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td colspan="5">
                             <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Categor</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     {% for(var x=0, ll=data[i].income.length; x<ll; x++) { %}
                                         <tr>
+                                            <td colspan="2">{%= x + 1 %}</td>
                                             <td style="padding: 1mm!important;">{%= data[i].income[x].date  || "&nbsp;" %}</td>
-                                            <td style="padding: 1mm!important;">{%= data[i].income[x].total  || "&nbsp;" %}</td>
                                             <td style="padding: 1mm!important;">{%= data[i].income[x].category || "&nbsp;" %}</td>
-                                            <td colspan="2"></td>
+                                            <td style="padding: 1mm!important;">{%= data[i].income[x].total  || "&nbsp;" %}</td>
                                         </tr>
                                     {% } %}
                                 </tbody>
