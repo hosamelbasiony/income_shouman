@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-25 01:29:55.699565",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "within_time",
+  "less_than_12_hours",
+  "more_than_12_hours"
+ ],
+ "fields": [
+  {
+   "fieldname": "within_time",
+   "fieldtype": "Float",
+   "label": "Within Time"
+  },
+  {
+   "fieldname": "less_than_12_hours",
+   "fieldtype": "Float",
+   "label": "Less Than 12 Hours"
+  },
+  {
+   "fieldname": "more_than_12_hours",
+   "fieldtype": "Float",
+   "label": "More Than 12 Hours"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-01-25 01:29:55.699565",
+ "modified_by": "Administrator",
+ "module": "Income Shouman",
+ "name": "Errand Period Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

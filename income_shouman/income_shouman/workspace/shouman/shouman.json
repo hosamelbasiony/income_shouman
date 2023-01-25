@@ -1,0 +1,34 @@
+{
+ "cards_label": "",
+ "category": "Modules",
+ "charts": [],
+ "creation": "2023-01-25 01:47:54.864056",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 1,
+ "icon": "integration",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "Shouman",
+ "links": [],
+ "modified": "2023-01-25 02:02:30.417764",
+ "modified_by": "Administrator",
+ "module": "Income Shouman",
+ "name": "Shouman",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "icon": "list",
+   "label": "Errands",
+   "link_to": "Errand",
+   "type": "DocType"
+  }
+ ]
+}
