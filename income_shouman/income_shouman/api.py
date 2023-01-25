@@ -12,6 +12,19 @@ from pyqrcode import create as qr_create
 
 #income_shouman.income_shouman.api.test   
 @frappe.whitelist()
+def get_settings():
+    distance_settings = frappe.get_doc("Errand Distance Settings")
+    period_settings = frappe.get_doc("Errand Period Settings")
+    position_settings = frappe.get_all(
+        "Errand Position Settings",
+        fields=["*"]
+    )
+    return {
+        "distance_settings": distance_settings,
+        "period_settings": period_settings,
+        "position_settings": position_settings,
+    }
+
 def test(emps):
     documents = json.loads(emps)
     for document in documents:

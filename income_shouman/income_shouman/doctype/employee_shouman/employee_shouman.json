@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{emp_name}-{#####}",
+ "autoname": "format:{nid}-{emp_name}",
  "creation": "2022-11-20 20:35:47.043480",
  "default_view": "List",
  "doctype": "DocType",
@@ -25,8 +25,12 @@
   "factory",
   "column_break_15",
   "data_12",
+  "position",
   "income_tab",
+  "basic_salary",
+  "column_break_21",
   "total_income",
+  "section_break_23",
   "income_details"
  ],
  "fields": [
@@ -125,6 +129,7 @@
    "fieldname": "emp_name",
    "fieldtype": "Data",
    "in_list_view": 1,
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Employee Name"
   },
@@ -132,12 +137,34 @@
    "fieldname": "nid",
    "fieldtype": "Data",
    "in_standard_filter": 1,
-   "label": "NID"
+   "label": "NID",
+   "unique": 1
+  },
+  {
+   "default": "Services",
+   "fieldname": "position",
+   "fieldtype": "Select",
+   "label": "Position",
+   "options": "Engineer\nAccountant\nSupervisor\nServices"
+  },
+  {
+   "default": "0",
+   "fieldname": "basic_salary",
+   "fieldtype": "Float",
+   "label": "Basic Salary"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-21 13:08:30.105410",
+ "modified": "2023-01-25 03:28:48.060372",
  "modified_by": "Administrator",
  "module": "Income Shouman",
  "name": "Employee_Shouman",
