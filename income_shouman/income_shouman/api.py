@@ -25,14 +25,20 @@ def get_settings():
         "position_settings": position_settings,
     }
 
+@frappe.whitelist()
 def test(emps):
     documents = json.loads(emps)
+    # return emps
     for document in documents:
+        print(document["emp_name"])
         doc = frappe.new_doc('Employee_Shouman')
         doc.emp_name = document["emp_name"]
         doc.dob = document["dob"]
         doc.doh = document["doh"]
         doc.nid = document["nid"]
+        doc.position = document["position"]
+        doc.sector = document["sector"]
+        doc.basic_salary = document["basic_salary"]
         doc.insert()
 
     frappe.db.commit()

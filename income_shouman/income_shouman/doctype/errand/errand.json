@@ -9,13 +9,17 @@
  "field_order": [
   "employee",
   "period",
+  "nights",
   "column_break_4",
-  "from_time",
-  "to_time",
+  "official_vacation_days",
+  "from_date",
+  "to_date",
   "more_tab",
   "distance",
+  "overtime_hours",
   "destination",
   "column_break_9",
+  "transportation_allowance",
   "value"
  ],
  "fields": [
@@ -26,25 +30,15 @@
    "options": "Employee_Shouman"
   },
   {
-   "fieldname": "from_time",
-   "fieldtype": "Time",
-   "label": "From Time"
-  },
-  {
-   "fieldname": "to_time",
-   "fieldtype": "Time",
-   "label": "To Time"
-  },
-  {
    "fieldname": "more_tab",
-   "fieldtype": "Tab Break",
-   "label": "More"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "period",
-   "fieldtype": "Int",
+   "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Period"
+   "label": "Period",
+   "options": "Within Time\nLess Than 12 Hours\nMore Than 12 Hours"
   },
   {
    "fieldname": "destination",
@@ -71,11 +65,45 @@
   {
    "fieldname": "column_break_9",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  },
+  {
+   "default": "0",
+   "fieldname": "nights",
+   "fieldtype": "Int",
+   "label": "Nights"
+  },
+  {
+   "default": "0",
+   "fieldname": "official_vacation_days",
+   "fieldtype": "Int",
+   "label": "Official Vacation Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "transportation_allowance",
+   "fieldtype": "Int",
+   "label": "Transportation Allowance"
+  },
+  {
+   "default": "0",
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-25 04:20:54.509043",
+ "modified": "2023-01-26 15:57:23.011080",
  "modified_by": "Administrator",
  "module": "Income Shouman",
  "name": "Errand",
